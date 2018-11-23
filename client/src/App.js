@@ -1,18 +1,20 @@
 import React, { Component } from "react";
-import{BrowserRouter, Route} from  'react-router-dom';
-import NavTabs from "./components/NavTabs/NavTabs";
-
-
+import logo from "./logo.svg";
 import "./App.css";
 
 class App extends Component {
   render() {
-    return(
-      <BrowserRouter>
-      <NavTabs />
-      <h1>Test</h1> 
-      </BrowserRouter>
-    )
+    return (
+      <div className="App">
+        <div className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h2>Welcome to React</h2>
+        </div>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
+      </div>
+    );
   }
 }
 
