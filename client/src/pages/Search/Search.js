@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Form from "../../components/Form";
 import JumboTron from "../../components/Jumbotron";
-import BookCard from "../../components/BookCard"
+// import BookCard from "../../components/BookCard"
 import API from "../../utils/API"
 
 class Search extends Component {
@@ -11,8 +11,8 @@ class Search extends Component {
     };
 
     componentDidMount(){
-        console.log("State Search: ", this.state.search)
-        this.searchBooks("The Lord of the Flies");
+        
+        this.searchBooks("Madame Bovary");
        
     };
 
@@ -21,23 +21,28 @@ class Search extends Component {
             .then(res => {
                 console.log("API search result: ", res.data)
                 this.setState({result: res.data})
-            })
-            
+            })        
             .catch(err => console.log(err));
     };
 
     handleInputChange = event => {
         const value = event.target.value;
-        console.log(value)
-            this.setState({
-                search: value
-            });
+        const name = event.target.name;
+
+        console.log("value is: ", value)  
+        console.log("name is: ", name)
+        this.setState({
+            search: value
+        });
+        
+          
     };
 
     handleFormSubmit = event => {
         event.preventDefault();
+       
+        console.log("handleFormSubmit ",this.state.search)
         this.searchBooks(this.state.search);
-        console.log("handleFormSubmit" + this.state.search)
     };
     
 

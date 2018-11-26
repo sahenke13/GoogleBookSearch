@@ -23,7 +23,6 @@ const BookCard = props => (
     <div className="img-container">
       <img alt={props.name} src={props.image} />
     </div>
-    {/* <span className="remove" onClick = {() => props.removeFriend(props.id)} >𝘅</span> */}
   </div>
 );
 
