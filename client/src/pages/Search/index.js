@@ -1,1 +1,1 @@
-export { default } from "./Searh.js";
+export { default } from "./Search";

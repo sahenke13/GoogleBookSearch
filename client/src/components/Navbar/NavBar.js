@@ -1,6 +1,7 @@
 import React from 'react';
 import "./NavBar.css";
 
+
 const NavBar = props => (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a 

@@ -1,17 +1,12 @@
 import React, { Component } from "react";
 
 
-class Saved extends component {
-    
+const Saved = () =>(   
+        <div>
+            <h1>
+                This is Saved test
+            </h1>
+        </div> 
+)
 
-
-
-
-render(){
-    return(
-
-
-    )
-
-    }
-}
+export default Saved;
