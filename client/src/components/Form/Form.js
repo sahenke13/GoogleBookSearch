@@ -16,7 +16,7 @@ export const Form = props => (
       />
       <br />
       <button
-          onClick={props.handleFromSubmit}
+          onClick={props.handleFormSubmit}
           className="btn btn-primary"
       >
           Search

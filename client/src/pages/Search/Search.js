@@ -6,7 +6,7 @@ import API from "../../utils/API"
 
 class Search extends Component {
     state = {
-        result: {},
+        result: [],
         search: ""
     };
 
@@ -17,6 +17,7 @@ class Search extends Component {
     };
 
     searchBooks = query => {
+        console.log("query", query)
         API.search(query)
             .then(res => {
                 console.log("API search result: ", res.data)
@@ -32,7 +33,7 @@ class Search extends Component {
         console.log("value is: ", value)  
         console.log("name is: ", name)
         this.setState({
-            search: value
+            [name]: value
         });
         
           
