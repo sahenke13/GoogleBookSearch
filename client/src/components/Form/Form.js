@@ -2,14 +2,27 @@ import React from "react";
 
 export const Form = props => (
 
-<div className="input-group input-group-sm mb-3">
-  <div class="input-group-prepend">
-    <span className="input-group-text" id="inputGroup-sizing-sm">Small</span>
+  <form>
+  <div className="form-group">
+      <label className="form-group">Search:</label>
+      <input
+          onChange={props.handleInputChange}
+          value={props.value}
+          name="search"
+          type="text"
+          className="form-control"
+          placeholder="Search for a Book"
+          id="seartch"
+      />
+      <br />
+      <button
+          onClick={props.handleFromSubmit}
+          className="btn btn-primary"
+      >
+          Search
+          </button>
   </div>
-  <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">{props.children}</input>
-  <button type="button" className="btn btn-outline-primary">Primary</button>
-</div>
-
-
-
+</form>
 )
+
+export default Form;

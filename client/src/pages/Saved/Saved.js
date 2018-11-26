@@ -1,12 +1,23 @@
 import React, { Component } from "react";
+import Jumbotron from "../../components/Jumbotron";
 
 
-const Saved = () =>(   
-        <div>
-            <h1>
-                This is Saved test
-            </h1>
-        </div> 
-)
+class Saved extends Component{
+    state =({});
+
+
+
+    render(){
+
+        return(
+            <div>
+                <Jumbotron />
+            </div>
+        )
+
+    }
+
+}   
+       
 
 export default Saved;

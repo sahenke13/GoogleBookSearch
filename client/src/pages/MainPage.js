@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import NavBar from "../components/Navbar";
 import Saved from "./Saved";
 import Search from "./Search";
@@ -25,7 +24,6 @@ render() {
                 currentPage = {this.state.currentPage}
                 handlePageChange = {this.handlePageChange}
                 />
-           
                 {
                     (this.state.currentPage === "Search"? <Search />:
                     (this.state.currentPage === "Saved"? <Saved />: null))
