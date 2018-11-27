@@ -3,6 +3,8 @@ import Form from "../../components/Form";
 import JumboTron from "../../components/Jumbotron";
 // import BookCard from "../../components/BookCard"
 import API from "../../utils/API"
+import { List, ListItem } from "../../components/List";
+import BookCard from "../../components/BookCard/BookCard";
 
 class Search extends Component {
     state = {
@@ -21,7 +23,9 @@ class Search extends Component {
         API.search(query)
             .then(res => {
                 console.log("API search result: ", res.data)
+                console.log(res.data.items)
                 this.setState({result: res.data})
+                console.log(this.state.result)
             })        
             .catch(err => console.log(err));
     };
@@ -41,9 +45,8 @@ class Search extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-       
-        console.log("handleFormSubmit ",this.state.search)
         this.searchBooks(this.state.search);
+       
     };
     
 
@@ -56,6 +59,24 @@ class Search extends Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                     />
+                    {this.state.result.length ? (
+                        <List>
+                        {this.state.result.items.map((book, i)=> {
+                            return (
+                                <ListItem>
+                                <BookCard
+                                    key = {i}
+                                    title = {book.volumeInfo.title}
+                                    authors = {book.volumeInfo.authors}
+                                    description = {book.volumeInfo.description}
+                                    link = {book.volumeInfo.infoLink}
+                                    image = {book.volumeInfo.imageLinks.thumbnail}
+                                />
+                                </ListItem>
+                            )
+                        })}
+                        </List>
+                ):(<h3>No Results to Display</h3>)}
             </div>
 
 

@@ -21,7 +21,7 @@ const BookCard = props => (
       </ul>
     </div>
     <div className="img-container">
-      <img alt={props.name} src={props.image} />
+      <img alt="" src={props.image} />
     </div>
   </div>
 );
