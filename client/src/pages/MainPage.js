@@ -8,10 +8,8 @@ class MainPage extends Component {
         currentPage: "Search"
     };
 
-
     handlePageChange = page => {
         this.setState({ currentPage: page});
-
 };
 
 
