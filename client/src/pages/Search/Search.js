@@ -24,8 +24,11 @@ class Search extends Component {
             .then(res => {
                 console.log("API search result: ", res.data)
                 console.log(res.data.items)
-                this.setState({result: res.data})
-                console.log(this.state.result)
+                this.setState({items: res.data.items}, () => {
+                    console.log(res.data, ' is res.data')
+                })
+                console.log(this.state.result.items)
+                console.log("lenght: " ,this.state.result.items.length)
             })        
             .catch(err => console.log(err));
     };
@@ -59,9 +62,9 @@ class Search extends Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                     />
-                    {this.state.result.length ? (
+                    {this.state.items ? (
                         <List>
-                        {this.state.result.items.map((book, i)=> {
+                        {this.state.items.map((book, i)=> {
                             return (
                                 <ListItem>
                                 <BookCard
@@ -70,7 +73,7 @@ class Search extends Component {
                                     authors = {book.volumeInfo.authors}
                                     description = {book.volumeInfo.description}
                                     link = {book.volumeInfo.infoLink}
-                                    image = {book.volumeInfo.imageLinks.thumbnail}
+                                    image = {book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ''}
                                 />
                                 </ListItem>
                             )
@@ -78,11 +81,8 @@ class Search extends Component {
                         </List>
                 ):(<h3>No Results to Display</h3>)}
             </div>
-
-
         );
     }
-
 }
     
    
