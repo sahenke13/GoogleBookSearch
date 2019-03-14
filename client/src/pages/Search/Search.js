@@ -12,7 +12,7 @@ class Search extends Component {
   };
 
   componentDidMount() {
-    this.searchBooks("Madame Bovary");
+    this.searchBooks("Michael Crichton");
   }
 
   searchBooks = query => {
